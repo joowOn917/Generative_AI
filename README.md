@@ -1,11 +1,8 @@
-# Generative_AI
 
 # Image Generator Project 
-
+사용자가 입력한 텍스트 기반의 프롬포트를 활용하여 이미지를 생성하는 것이 목표.
 
 ## 🖥 Overview 
-사용자가 입력한 이미지와 텍스트 기반의 프롬포트를 활용하여 이미지를 생성하는 것이 목표이다. 
-
 사용하는 모델은 StableDiffusion으로, 이는 자연어 설명으로부터 이미지를 생성해내는 전형적인 Text-to-Image task 모델이다. 
 
 StableDiffusionXLImg2ImgPipeline 클래스를 활용하여 이미 학습된 StableDiffusion 모델을 로드하고, 입력 이미지를 받아 안정적인 방식으로 변환한 후 출력(결과)이미지를 생성할 것이다. 
@@ -31,7 +28,7 @@ StableDiffusionXLImg2ImgPipeline 클래스를 활용하여 이미 학습된 Stab
 ### 1️⃣ Preprocessing for Prompt
 Text-to-Image에 사용하는 입력 텍스트를 프롬포트라 하며, 이 과정을 정확한 이미지 생성을 위해 입력 받은 텍스트를 전처리하는 과정이다. 
 
-프롬포트는 한국어와 영어 두가지 버전으로 개발되었다.
+프롬포트는 한국어와 영어 두가지 버전으로 개발할 예정이나, 현재 영어 프롬포트만 개발이 된 상태이다. 
 
 #### 📜 영어 프롬포트
   **Step1.** 입력받은 텍스트와 유사한 문장 다수 생성 (Paraphrasing API) 
@@ -43,18 +40,7 @@ Text-to-Image에 사용하는 입력 텍스트를 프롬포트라 하며, 이 �
   **Step4.** 텍스트에 가중치를 부여하여 프롬포트 형식으로 변환
   
 
-#### 📜 한국어 프롬포트
-  **Step1**. 입력 받은 텍스트와 유사한 문장 다수 생성 (Paraphrasing API)
-  
-  **Step2.** 모든 문장들 토큰화
-  
-  **Step3.** 조사 제거, 어간 추출
-  
-  **Step4.** 단어별 가중치 부여
-
-
-
-## 📌 APIs & Model
+## 📌 사용한 APIs & Model
 
 * **Paraphrasing API**
   KT 지니랩스에서 제공하는 Open API
@@ -91,6 +77,11 @@ Text-to-Image에 사용하는 입력 텍스트를 프롬포트라 하며, 이 �
 
 
   <img src="https://github.com/JinSan-RM/ImageGen_textPlusimage/assets/143769249/d30fc8dd-27bd-46e4-8794-b781617479fd" width="80%" height="%80">
+
+
+
+
+
 ---
 ***BERT**: 자연어처리를 위해 2018년에 구글에서 고안한 transformers기반의 머신러닝 모델. 문장의 전체 구조를 양방향으로 학습하여 문맥을 파악한 뒤, 단어를 임베딩한다. 
 
